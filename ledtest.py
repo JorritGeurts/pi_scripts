@@ -16,4 +16,4 @@ wiringpi.pinMode(pin,1)
 for i in range(0,10):
     blink(pin)
 
-print("done")
+print("done ")
