@@ -1,14 +1,20 @@
-import RPi.GPIO as GPIO
+import wiringpi
 import time
+import sys
 
-# set up GPIO
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-GPIO.setup(18, GPIO.OUT)
-
-# loop to flash LED
-while True:
-    GPIO.output(18, GPIO.HIGH)
-    time.sleep(0.5)  # adjust this interval to change the flashing rate
-    GPIO.output(18, GPIO.LOW)
+def blink(_pin):
+    wiringpi.digitalWrite(_pin,1)
     time.sleep(0.5)
+    wiringpi.digitalWrite(_pin,0)
+    time.sleep(0.5)
+
+print("start")
+pin = 2
+wiringpi.wiringPiSetup()
+wiringpi.pinMode(pin, 1)
+
+i == 0
+while i == 0:
+    blink(pin)
+
+print("done")
