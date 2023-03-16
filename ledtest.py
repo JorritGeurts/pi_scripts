@@ -8,7 +8,7 @@ def blink(_pin):
     wiringpi.digitalWrite(_pin,0)
     time.sleep(0.5)
 
-print("weee")
+print("start")
 pin = 2
 wiringpi.wiringPiSetup()
 wiringpi.pinMode(pin, 1)
