@@ -9,11 +9,12 @@ import sys
 print("start")
 wiringpi.wiringPiSetup()
 Pins = [2, 3, 4, 6]
-for i in Pins:
-    wiringpi.pinMode(i, wiringpi.OUTPUT)
+for pi in Pins:
+    wiringpi.pinMode(pi, wiringpi.OUTPUT)
 
 for index in range(1,10):
-    wiringpi.pinMode(i, wiringpi.HIGH)
+    for i in Pins:
+        wiringpi.pinMode(pi, wiringpi.HIGH)
     time.sleep(1)
 
 print("done")
