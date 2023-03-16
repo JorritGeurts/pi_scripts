@@ -8,10 +8,10 @@ def blink(_pin):
     wiringpi.digitalWrite(_pin,0)
     time.sleep(0.5)
 
-print("start")
+print("weee")
 pin = 2
 wiringpi.wiringPiSetup()
-wiringpi.pinMode(pin,1)
+wiringpi.pinMode(pin, 1)
 
 for i in range(0,10):
     blink(pin)
