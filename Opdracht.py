@@ -12,7 +12,7 @@ Pins = [2, 3, 4, 6]
 for i in Pins:
     wiringpi.pinMode(i, 0)
 
-for index in range(1,10)
+for index in range(1,10):
     blink(Pins)
 
 print("done")
