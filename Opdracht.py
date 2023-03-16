@@ -10,10 +10,10 @@ print("start")
 wiringpi.wiringPiSetup()
 Pins = [2, 3, 4, 6]
 for i in Pins:
-    wiringpi.pinMode(i, 0)
+    wiringpi.pinMode(i, wiringpi.OUTPUT)
 
 for index in range(1,10):
-    wiringpi.pinMode(i, 1)
+    wiringpi.pinMode(i, wiringpi.HIGH)
     time.sleep(1)
 
 print("done")
