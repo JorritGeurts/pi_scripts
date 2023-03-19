@@ -17,15 +17,6 @@ Pins = [2, 3, 4, 6]
 for i in Pins:
     wiringpi.digitalWrite(i, wiringpi.OUTPUT)
 
-fading = [25, 50, 75, 100]
-
-#Program
-for fade in fading:
-    for pin in Pins:
-        wiringpi.softPwmCreate(pin, 0, 100)
-        wiringpi.softPwmWrite(pin, int(fade/100.0*100))
-    time.sleep(2)
-
 for pin in pins:
     wiringpi.digitalWrite(pin, 0)
 time.sleep(0.4)
