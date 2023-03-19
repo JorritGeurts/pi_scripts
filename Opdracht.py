@@ -14,7 +14,7 @@ for pi in Pins:
 
 for index in range(1,10):
     for i in Pins:
-        wiringpi.pinMode(pi, wiringpi.HIGH)
+        wiringpi.digitalWrite(pi, wiringpi.HIGH)
     time.sleep(1)
 
 print("done")
