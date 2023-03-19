@@ -2,11 +2,13 @@ import wiringpi
 import time
 import sys
 
-def blink(_pin):
+def blink(_pin,_pin2):
      wiringpi.digitalWrite(_pin, 1)
-     time.sleep(0.5)
+     wiringpi.digitalWrite(_pin2, 1)
+     time.sleep(0.1)
      wiringpi.digitalWrite(_pin, 0)
-     time.sleep(0.5)
+     wiringpi.digitalWrite(_pin2, 0)
+     time.sleep(0.1)
 
 #setup
 print("start")
@@ -28,11 +30,9 @@ wiringpi.pinMode(pin4,1)
 
 #lights on
 for i in range(1,4):
-    blink(pin1)
-    blink(pin2)
-    blink(pin3)
-    blink(pin4)
-    blink(pin3)
-    blink(pin2)
+    for i in range(1,6):
+        blink(pin1,pin3)
+    for i in range(1,6):
+        blink(pin2,pin4)
 
 print("done")
