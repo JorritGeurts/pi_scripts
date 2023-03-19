@@ -17,7 +17,7 @@ Pins = [2, 3, 4, 6]
 for i in Pins:
     wiringpi.digitalWrite(i, wiringpi.OUTPUT)
 
-for pin in pins:
+for pin in Pins:
     wiringpi.digitalWrite(pin, 0)
 time.sleep(0.4)
 
