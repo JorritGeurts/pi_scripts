@@ -12,19 +12,19 @@ import sys
 print("start")
 wiringpi.wiringPiSetup()
 pin1 = 2
-wiringpi.pinMode(pin,1)
+wiringpi.pinMode(pin1,1)
 
 wiringpi.wiringPiSetup()
 pin2 = 3
-wiringpi.pinMode(pin,1)
+wiringpi.pinMode(pin2,1)
 
 wiringpi.wiringPiSetup()
 pin3 = 4
-wiringpi.pinMode(pin,1)
+wiringpi.pinMode(pin3,1)
 
 wiringpi.wiringPiSetup()
 pin4 = 6
-wiringpi.pinMode(pin,1)
+wiringpi.pinMode(pin4,1)
 
 #lights on
 for i in range(1,4):
