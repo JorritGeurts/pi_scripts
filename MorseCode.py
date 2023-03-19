@@ -21,7 +21,7 @@ def Dott():
 
 def Dash():
     wiringpi.digitalWrite(pin,1)
-    time.sleep(0.5)
+    time.sleep(0.3)
     wiringpi.digitalWrite(pin,0)
     time.sleep(0.1)
 
@@ -35,6 +35,9 @@ for i in range(len(message)):
     letter = message[i]
 
     translate(letter)
+
+    wiringpi.digitalWrite(pin,0)
+    time.sleep(0.2)
     
 
 print(letter)
