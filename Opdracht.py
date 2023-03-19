@@ -2,28 +2,36 @@ import wiringpi
 import time
 import sys
 
-# def blink(_pin):
-#     wiringpi.pinMode(i, 1)
-#     time.sleep(0.5)
+ def blink(_pin):
+     wiringpi.pinMode(_pin, 1)
+     time.sleep(0.5)
+     wiringpi.pinMode(_pin, 0)
+     time.sleep(0.5)
 
 #setup
 print("start")
 wiringpi.wiringPiSetup()
-Pins = [2, 3, 4, 6]
-for pi in Pins:
-    wiringpi.pinMode(pi, wiringpi.OUTPUT)
+pin1 = 2
+wiringpi.pinMode(pin,1)
+
+wiringpi.wiringPiSetup()
+pin2 = 3
+wiringpi.pinMode(pin,1)
+
+wiringpi.wiringPiSetup()
+pin3 = 4
+wiringpi.pinMode(pin,1)
+
+wiringpi.wiringPiSetup()
+pin4 = 6
+wiringpi.pinMode(pin,1)
 
 #lights on
-for index in range(1,10):
-    for pi in Pins:
-        wiringpi.digitalWrite(pi, wiringpi.HIGH)
-    time.sleep(1)
-    
-
-#lights off
-for pi in Pins:
-    wiringpi.digitalWrite(pi, wiringpi.LOW)
-time.sleep(1) 
+for i in range(1,4):
+    blink(pin1)
+    blink(pin2)
+    blink(pin3)
+    blink(pin4)
 
 
 print("done")
