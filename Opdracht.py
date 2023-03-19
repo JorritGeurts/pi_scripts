@@ -34,6 +34,5 @@ for i in range(1,4):
     blink(pin4)
     blink(pin3)
     blink(pin2)
-    blink(pin1)
 
 print("done")
