@@ -15,13 +15,13 @@ for pi in Pins:
 
 #lights on
 for index in range(1,10):
-    for i in Pins:
+    for pi in Pins:
         wiringpi.digitalWrite(pi, wiringpi.HIGH)
     time.sleep(1)
     
 
 #lights off
-for i in Pins:
+for pi in Pins:
     wiringpi.digitalWrite(pi, wiringpi.LOW)
 time.sleep(1) 
 
