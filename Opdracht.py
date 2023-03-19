@@ -26,4 +26,8 @@ for fade in fading:
         wiringpi.softPwmWrite(pin, int(level/100*100))
     time.sleep(2)
 
+for pin in pins:
+    wiringpi.digitalWrite(pin, 0)
+time.sleep(0.4)
+
 print("done")
