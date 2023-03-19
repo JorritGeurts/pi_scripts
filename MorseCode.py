@@ -168,4 +168,4 @@ for i in range(len(message)):
     time.sleep(0.2)
     
 
-print(letter)
+print("message sent")
