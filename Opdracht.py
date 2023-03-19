@@ -23,7 +23,7 @@ fading = [25, 50, 75, 100]
 for fade in fading:
     for pin in Pins:
         wiringpi.softPwmCreate(pin, 0, 100)
-        wiringpi.softPwmWrite(pin, int(level/100.0*100))
+        wiringpi.softPwmWrite(pin, int(fade/100.0*100))
     time.sleep(2)
 
 for pin in pins:
