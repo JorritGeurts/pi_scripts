@@ -1,27 +1,27 @@
-import wiringpi
+import wiringpi as wp
 import time
-import sys
 
-#def blink(_pin,_pin2):
-    #wiringpi.digitalWrite(_pin, 1)
-    #wiringpi.digitalWrite(_pin2, 1)
-    #time.sleep(0.1)
-    #wiringpi.digitalWrite(_pin, 0)
-    #wiringpi.digitalWrite(_pin2, 0)
-    #time.sleep(0.1)
+# set pin numbers
+LED_PIN = 2
 
-#setup
-print("start")
-wiringpi.wiringPiSetup()
-pin = 2
-sos = [0.5, 0.5, 0.5, 1.5, 1.5, 1.5, 0.5, 0.5, 0.5]
+# initialize WiringPi
+wp.wiringPiSetup()
 
-#lights on
-for pulse in sos:
-    wiringpi.digitalWrite(pin, wiringpi.HIGH)
-    time.sleep(pulse)
+# set up LED pin as output
+wp.pinMode(LED_PIN, wp.OUTPUT)
 
-    wiringpi.digitalWrite(pin, wiringpi.LOW)
-    time.sleep(pulse)
+# blinking function
+def blink(pin, numberBlinks, periode, dutyCycle):
+    timeHigh = periode * dutyCycle/100
+    timeLow = periode - timeHigh
+    for i in range(numberBlinks):
+        wp.digitalWrite(pin, wp.HIGH)
+        time.sleep(timeHigh)
+        wp.digitalWrite(pin, wp.LOW)
+        time.sleep(timeLow)
 
-print("done")
+# blink LED 10 times
+blink(LED_PIN, 20, 0.5, 75)
+
+# cleanup
+print("program executed")
